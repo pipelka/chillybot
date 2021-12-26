@@ -1,0 +1,30 @@
+{
+  "name": "chillybot",
+  "version": "0.0.1",
+  "description": "",
+  "main": "gulpfile.js",
+  "author": "Alexander Pipelka <alexander.pipelka@gmail.com>",
+  "scripts": {
+    "server": "gulp ; http-server ./html"
+  },
+  "devDependencies": {
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-base64-favicon": "^1.0.3",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-css-base64": "^1.3.4",
+    "gulp-css-purge": "^3.0.9",
+    "gulp-fontmin": "^0.7.4",
+    "gulp-gzip": "^1.4.2",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-inline": "^0.1.3",
+    "gulp-inline-fonts": "^1.2.1",
+    "gulp-uglify": "^3.0.2",
+    "http-server": "^13.0.2",
+    "jshint": "^2.11.1",
+    "purge-from-html": "^1.0.3"
+  },
+  "dependencies": {
+    "gulp-concat": "^2.6.1"
+  }
+}

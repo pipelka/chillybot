@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- shortcut::html/images/favicon.png -->
+    <title>ChillyBot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="font/fa5.css">
+
+    <link rel="stylesheet" type="text/css" href="css/fa5.css">
+    <!--<link rel="stylesheet" type="text/css" href="css/basic.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="css/sidenav.css">
+    <link rel="stylesheet" type="text/css" href="css/tabcontent.css">
+    <link rel="stylesheet" type="text/css" href="css/modal.css">-->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <link rel="stylesheet" href="font/css/fontawesome.min.css">
+
+    <script src="js/tab.js"></script>
+    <script src="js/status.js"></script>
+    <script src="js/dom.js"></script>
+    <script src="js/ajax.js"></script>
+    <script src="js/override.js"></script>
+    <script src="js/config.js"></script>
+    <!--
+    <script src="js/md5.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/login.js"></script>-->
+</head>
+
+<body>
+    <header>
+        <div class="flex-row">
+            <span class="title">ChillyBot</span>
+            <div class="spacer"></div>
+            <div class="tab-header selected" onclick="openTab(event, 'home')">
+                <i class="fas fa-2x fa-tachometer-alt"></i>
+                <span>Home</span>
+            </div>
+            <div class="tab-header" onclick="openTab(event, 'wifi')">
+                <i class="fas fa-2x fa-wifi"></i>
+                <span>WiFi</span>
+            </div>
+            <div class="tab-header" onclick="openTab(event, 'brewfather')">
+                <i class="fas fa-2x fa-beer"></i>
+                <span>Brewfather</span>
+            </div>
+            <div class="tab-header" onclick="openTab(event, 'mqtt')">
+                <i class="fas fa-2x fa-rss"></i>
+                <span>MQTT</span>
+            </div>
+            <div class="tab-header" onclick="openTab(event, 'status')">
+                <i class="fas fa-2x fa-microchip"></i>
+                <span>Status</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="main">
+        <!-- home -->
+        <div id="home" class="page selected">
+            <!--<div class="flex-row">-->
+                <div id="batch" class="title">
+                    <span>Batch&nbsp;</span>
+                    <span id="batchno"></span>
+                    <span>&nbsp;-&nbsp;</span>
+                    <span id="batchname"></span>
+                <!--</div>-->
+            </div>
+            <div class="flex-row spacing-top">
+                <div>
+                    <i class="fas fa-fw fa-thermometer-half"></i><span>Current Temperature:&nbsp;</span>
+                    <span id="current_temperature"></span>
+                    <span>&nbsp;°C</span>
+                </div>
+            </div>
+            <div class="flex-row">
+                <div>
+                    <i class="fas fa-fw fa-map-pin"></i><span>Target:&nbsp;</span>
+                    <span id="target_temperature"></span>
+                    <span>&nbsp;°C</span>
+                </div>
+            </div>
+            <div class="flex-row spacing-top">
+                <input type="checkbox" id="override" name="scales">
+                <label for="override" style="width: auto;">Manual target temperature&nbsp;</label>
+                <input type="number" id="override_target" name="target" value=18 step=0.5 style="width: 4em;">
+                <span>&nbsp;°C</span>
+            </div>
+            <div class="flex-row">
+                <button onclick="apply_override(event)">Apply</button>
+            </div>
+        </div>
+
+        <!-- wifi -->
+        <div id="wifi" class="page">
+            <span class="title">WiFi Settings</span>
+            <div class="flex-row">
+                <span class="caption">SSID</span>
+            </div>
+            <div class="flex-row">
+                <label for="config_ssid"><i class="fas fa-wifi fa-fw"></i>SSID</label>
+                <div class="search">
+                    <input spellcheck="false" type="text" id="config_ssid" placeholder="WiFi SSID">
+                    <button onclick="selectNetwork()"><i class="fas fa-search fa-fw"></i></button>
+                </div>
+            </div>
+            <div class="flex-row">
+                <label for="config_psk"><i class="fas fa-key fa-fw"></i>Key (PSK)</label>
+                <input type="password" id="config_psk" placeholder="WiFi Pre-Shared Key">
+            </div>
+            <div class="flex-row">
+                <span class="caption">IP Address</span>
+            </div>
+            <div class="flex-row">
+                <label for="config_dhcp"><i class="fas fa-sitemap fa-fw"></i>Method</label>
+                <select id="config_dhcp" onchange="change_dhcp()">
+                    <option selected="selected" value="0">Manual (STATIC)</option>
+                    <option value="1">Automatic (DHCP)</option>
+                </select>
+            </div>
+            <div class="flex-row ipdata">
+                <label for="config_ip"><i class="fas fa-map-pin fa-fw"></i>Local IP Address</label>
+                <input spellcheck="false" type="text" id="config_ip">
+            </div>
+            <div class="flex-row ipdata">
+                <label for="config_gw"><i class="fas fa-route fa-fw"></i>Gateway</label>
+                <input spellcheck="false" type="text" id="config_gw">
+            </div>
+            <div class="flex-row ipdata">
+                <label for="config_netmask"><i class="fas fa-theater-masks fa-fw"></i>Subnet Mask</label>
+                <input type="text" id="config_netmask">
+            </div>
+            <div class="flex-row ipdata">
+                <label for="config_dns"><i class="fas fa-address-book fa-fw"></i>DNS Server</label>
+                <input type="text" id="config_dns">
+            </div>
+
+            <div class="flex-row">
+                <span class="caption">Network Time Protocol</span>
+            </div>
+            <div class="flex-row">
+                <label for="config_ntpserver"><i class="fas fa-clock fa-fw"></i>NTP Server</label>
+                <input spellcheck="false" type="text" id="config_ntpserver" placeholder="Hostname / IP-Address">
+            </div>
+            <div class="flex-row">
+                <label for="config_timezone"><i class="fas fa-globe fa-fw"></i>Time Zone</label>
+                <select id="config_timezone">
+                    <option value="GMT0BST,M3.5.0/1,M10.5.0">(GMT) Western Europe Time, London, Lisbon, Casablanca</option>
+                    <option value="CET-1CEST,M3.5.0/02,M10.5.0/03">(GMT +1:00 hour) Brussels, Madrid, Paris, Vienna</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- brewfather -->
+        <div id="brewfather" class="page brewfather">
+            <span class="title">Brewfather Settings</span>
+            <div class="flex-row">
+                <span class="caption">Stream</span>
+            </div>
+            <div class="flex-row">
+                <label for="config_deviceid"><i class="fas fa-id-badge fa-fw"></i>Device ID</label>
+                <input spellcheck="false" type="text" id="config_deviceid" placeholder="Device ID">
+            </div>
+            <div class="flex-row">
+                <label for="config_streamurl"><i class="fas fa-chart-line fa-fw"></i>URL</label>
+                <input spellcheck="false" type="text" id="config_streamurl" placeholder="http://log.brewfather.net/stream?id=xxxxxxxx">
+            </div>
+            <div class="flex-row">
+                <span class="caption">API</span>
+            </div>
+            <div class="flex-row">
+                <label for="config_apiuser"><i class="fas fa-user fa-fw"></i>User</label>
+                <input spellcheck="false" type="text" id="config_apiuser" placeholder="Brewfather API Username">
+            </div>
+            <div class="flex-row">
+                <label for="config_apikey"><i class="fas fa-key fa-fw"></i>Key</label>
+                <input spellcheck="false" type="text" id="config_apikey" placeholder="API Key">
+            </div>
+
+        </div>
+
+        <!-- mqtt -->
+        <div id="mqtt" class="page">
+            <span class="title">MQTT Settings</span>
+            <div class="flex-row">
+                <label for="config_mqttserver"><i class="fas fa-server fa-fw"></i>Server</label>
+                <input spellcheck="false" type="text" id="config_mqttserver" placeholder="Server IP">
+            </div>
+            <div class="flex-row">
+                <label for="config_mqttport"><i class="fas fa-door-closed fa-fw"></i>Port</label>
+                <input spellcheck="false" type="text" id="config_mqttport" placeholder="TCP/IP Port">
+            </div>
+
+            <!-- status -->
+            <div id="status" class="page">
+                <span class="title">Device Status</span>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <button class="action hidden normal" id="buttonSave" href="#" onclick="postConfiguration()">
+            <span><i id="buttonSaveIcon" class="fas fa-cloud-upload-alt fa-fw"></i>Store Configuration</span>
+        </button>
+        <!--<button class="action normal" id="buttonReset" href="#" onclick="confirmReset()">
+            <span><i class="fas fa-power-off fa-fw"></i>Reset Device</span>
+        </button>-->
+    </footer>
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            loadStatusInformationPeriodically();
+            loadConfiguration();
+        });
+    </script>
+
+</body>
+
+</html>

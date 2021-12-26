@@ -1,0 +1,93 @@
+#login {
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.logindialog {
+    display: block;
+    width: 380pt !important;
+    border-radius: 8px;
+    margin: auto;
+    box-shadow: 4px 4px 15px -1px rgba(0,0,0,0.4);
+    background-color: #1f2a35;
+    background-image: url(../images/brushed-metal.png),linear-gradient(to bottom,rgba(255,255,255,.2) 0,rgba(255,255,255,.1) 100%);
+}
+
+.logindialog .active {
+    background-color: #fcbd1e;
+    color: black;
+}
+
+.logindialog .form {
+    padding: 32px;
+}
+
+.logindialog .input-container {
+    display: flex;
+    width: 100%;
+    margin-bottom: 24px;
+    height: 37px;
+}
+
+.logindialog input {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    height: 37px;
+    box-shadow: none;
+}
+
+.logindialog i {
+    margin: 8px 16px 8px 0;
+    color: white;
+}
+
+.logindialog p {
+    color: white;
+    margin: auto;
+    display: block;
+    text-align: center;
+    padding-bottom: 16pt;
+    filter: drop-shadow(4px 4px 4px #222);
+}
+
+.logindialog img {
+    margin: auto;
+    display: block;
+    padding-bottom: 8pt;
+    filter: drop-shadow(4px 4px 4px #222);
+}
+
+.logindialog button {
+    border-radius: 3px;
+    font-size: 14px;
+    margin: auto;
+}
+
+.auth-failed {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+}
+
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}

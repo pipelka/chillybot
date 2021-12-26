@@ -1,0 +1,69 @@
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 40pt;
+    left: 0;
+    /*background-color: #484c58;*/
+    overflow-x: hidden;
+    padding-top: 20px;
+    background-color: #1f2a35;
+    background-image: url(../images/brushed-metal.png),linear-gradient(to bottom,rgba(255,255,255,.2) 0,rgba(255,255,255,.1) 100%);
+    background-color: hsla(210,26%,12%,1);
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    color: #FFFFFF;
+    display: block;
+    margin: 5pt;
+    border-radius: 3pt;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+}
+
+.sidenav i {
+    margin-right: 5pt;
+}
+
+.sidenav a:hover {
+    background-color: #414550;
+}
+
+.sidenav .active {
+    color: black;
+    background-color: #e9a308 !important;
+    box-shadow: 4px 4px 15px -1px rgba(0,0,0,0.2);
+}
+
+.sidenav .spacer {
+    margin-top: 1em;
+}
+
+.sidenav .action {
+    background: url(../images/brushed-metal.png),linear-gradient(to bottom,rgba(255,255,255,.2) 0,rgba(255,255,255,.1) 100%);
+    background-color: #212a33;
+    border: 1px solid #232d37;
+}
+
+.sidenav .action i {
+    margin-right: 5pt;
+}
+
+.sidenav .action {
+    padding-left: 10px;
+}
+
+.sidenav .action:active {
+    background-color: #e9a308 !important;
+    box-shadow: 4px 4px 15px -1px rgba(0,0,0,0.2);
+    -webkit-transition-duration: 0s;
+    transition-duration: 0s;
+    color: black;
+}
+
+.sidenav .action:hover {
+    box-shadow: 4px 4px 15px -1px rgba(0,0,0,0.2);
+}

@@ -1,0 +1,127 @@
+/* Style the tab content */
+.tabcontent {
+    position: relative;
+    top: 40pt;
+    display: none;
+    min-width: 600px;
+    max-width: 70%;
+    color: #FFFFFF;
+    height: auto;
+    margin: 0 auto;
+    border-color: hsla(210,26%,12%,1);
+}
+
+.tabcontent legend {
+    text-align: left;
+    font-size: 1.5em;
+    font-weight: bold;
+    display: block;
+    width: 100%;
+    padding-top: 1em;
+    padding-bottom: 0.3em;
+    border-style: solid;
+    border-width: 0;
+    border-bottom-width: 1px;
+    border-color: gray;
+}
+
+.tabcontent h6 {
+    padding-top: 0;
+    margin-top: 0.3em;
+    padding-bottom: 0.3em;
+    color: gray;
+}
+
+.tabcontent h1 {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    display: block;
+}
+
+.tabcontent p {
+    text-align: center;
+    font-size: smaller;
+}
+
+.tabcontent .panel {
+    border-radius: 3pt;
+    border-style: solid;
+    border-width: 1px;
+    border-color: hsla(210,26%,12%,1);
+    box-shadow: 4px 4px 15px -1px rgba(0,0,0,0.2);
+    background-color: #414550;
+    width: 100%;
+    padding: 5pt;
+
+}
+
+.tabcontent .panel-top {
+    margin-bottom: 1.5em;
+}
+
+.tabcontent table {
+    width: 100%;
+    box-shadow: 4px 4px 15px -1px rgba(0,0,0,0.2);
+    border-collapse: collapse;
+}
+
+.tabcontent table tr:nth-child(even) {
+    background: #484c58;
+}
+
+.tabcontent table tr:nth-child(odd) {
+    background: #414550;
+}
+
+.tabcontent table tr:hover {
+    color: black;
+    background-color: #e9a308;
+}
+
+.tabcontent table caption {
+    background-color: #232d36;
+    padding: 8pt;
+    border-radius: 3pt;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-style: solid;
+    border-width: 1px;
+    border-color: hsla(210,26%,12%,1);
+    box-shadow: 4px 4px 15px -1px rgba(0,0,0,0.2);
+    text-align: left;
+}
+
+
+.tabcontent table tr {
+    border-style: solid;
+    border-width: 1px;
+    border-top-width: 0;
+    border-color: hsla(210,26%,12%,1);
+    font-size: smaller;
+}
+
+.tabcontent table th {
+    text-align: left;
+    padding: 7pt;
+    width: 50%;
+}
+
+.tabcontent .nohover:hover {
+    color: white;
+    background-color: #414550;
+}
+
+.tabcontent .check {
+    display: inline-flex;
+    width: 100%;
+    user-select: none;
+}
+
+.tabcontent .check input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    margin-top: 2px;
+    box-shadow: none !important;
+}

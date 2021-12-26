@@ -1,0 +1,131 @@
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: transparent;
+    color: white;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 0;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.modal-content table {
+    width: 500pt;
+    margin: auto;
+    box-shadow: 4px 4px 15px -1px rgba(0,0,0,0.2);
+    border-collapse: collapse;
+}
+
+.modal-content table tr:nth-child(even) {
+    background: #484c58;
+}
+
+.modal-content table tr:nth-child(odd) {
+    background: #414550;
+}
+
+.modal-content table caption {
+    background-color: #232d36;
+    padding: 8pt;
+    border-radius: 3pt;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-style: solid;
+    border-width: 1px;
+    border-color: hsla(210,26%,12%,1);
+    box-shadow: 4px 4px 15px -1px rgba(0,0,0,0.2);
+    text-align: left;
+}
+
+.modal-content table caption i {
+    cursor: pointer;
+}
+
+.modal-content table tr {
+    border-style: solid;
+    border-width: 1px;
+    border-top-width: 0;
+    border-color: hsla(210,26%,12%,1);
+    font-size: smaller;
+    cursor: pointer;
+}
+
+.modal-content .nohover:hover {
+    color: white;
+    background-color: #414550;
+    cursor: unset;
+}
+
+.modal-content table th {
+    text-align: left;
+    padding: 7pt;
+    width: 50%;
+}
+
+.modal-content table tr span {
+    padding-left: 6px;
+}
+
+.modal-content table tr:hover {
+    color: black;
+    background-color: #e9a308;
+}
+
+.window {
+    background-color: #414550;
+    width: 350pt;
+    border-radius: 8px;
+    box-shadow: 10px 10px 14px -1px rgba(0,0,0,0.5);
+    margin: 15% auto;
+}
+
+.window .title {
+    border-radius: 8px 8px 0 0;
+    background-color: #171f27;
+    background-image: url(../images/brushed-metal.png),linear-gradient(to bottom,rgba(255,255,255,.2) 0,rgba(255,255,255,.1) 100%);
+    padding: 8px;
+    color: white;
+    font-weight: bold;
+}
+
+.window .content {
+    padding: 24pt;
+    color: white;
+}
+
+.window i {
+    content: "";
+    clear: both;
+    display: table;
+    float: left;
+    padding: 24pt 16pt 24pt 24pt;
+    color: #e9a308;
+    filter: drop-shadow(4px 4px 4px #222);
+}
+
+.window .footer {
+    border-radius: 0 0 8px 8px;
+    background-color: #484c58;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.window .footer button {
+    margin: 10pt;
+    padding: 10px;
+    width: 140px;
+}

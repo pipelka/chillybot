@@ -1,0 +1,172 @@
+:root {
+    --text-color-header: #eeeeee;
+    --text-selected-header: #606970;
+    --primary-color: #2a2a2a;
+    --secondary-color: #a2d6e0;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: whitesmoke;
+}
+
+header {
+    background-color: var(--primary-color);
+    height: 120px;
+    border: none;
+    z-index: 3;
+    font-size: 14px;
+    color: var(--text-color-header);
+}
+
+footer {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    bottom: 0;
+    height: 50px;
+    left: 0;
+    right: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type=number], input[type=text], input[type=password], select {
+    height: 2em;
+    border: 1px solid;
+    line-height: 2em;
+    border-radius: 0.5em;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+input[type=number] {
+    text-align: center;
+}
+
+input[type=text], input[type=password], select {
+    min-width: 200px;
+}
+
+input[type=number]:focus, input[type=text]:focus, input[type=password]:focus {
+    outline: none;
+    border: 1px solid var(--secondary-color);
+}
+
+button {
+    height: 2.5em;
+    /*padding: 0.7em;*/
+    border-radius: 0.5em;
+    border-color: var(--text-color-header);
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+header .fas {
+    display: block;
+}
+
+.flex-row {
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+    gap: 6px;
+    align-content: flex-start;
+    padding-right: 1em;
+    padding-left: 1em;
+}
+
+header .flex-row > * {
+    margin: auto;
+}
+
+header .title {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+header .selected {
+    color: var(--secondary-color);
+}
+
+.spacer {
+    flex-grow: 10;
+}
+
+.tab-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 48px;
+    width: 64px;
+    gap: 0.5em;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.tab-header span {
+    font-size: 13px;
+}
+
+.main {
+    left: 0;
+    bottom: 50px;
+    position: absolute;
+    right: 0;
+    top: 130px;
+    background-color: transparent;
+    overflow-y: auto;
+}
+
+.main .page {
+    display: none;
+    padding: 2em;
+    width: fit-content;
+    align-self: center;
+    margin: auto;
+}
+
+.main .page .fa-fw {
+    width: 32px;
+}
+
+.main .selected {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7em;
+}
+
+.page .title {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.page .flex-row {
+    height: unset;
+    align-self: flex-start;
+    align-items: center;
+}
+
+.page label {
+    width: 250px;
+}
+
+.page .caption {
+    margin-top: 0.5em;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.spacing-top {
+    margin-top: 2em;
+}
+
+.brewfather input[type=text], .brewfather input[type=password], .brewfather select {
+    min-width: 550px;
+}
+
+.brewfather label {
+    width: 150px;
+}

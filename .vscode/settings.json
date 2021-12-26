@@ -1,0 +1,16 @@
+{
+    "files.associations": {
+        "memory": "cpp",
+        "cmath": "cpp",
+        "set": "cpp",
+        "bitset": "cpp",
+        "atomic": "cpp",
+        "*.tcc": "cpp",
+        "sstream": "cpp",
+        "regex": "cpp"
+    },
+    "files.exclude": {
+        ".pio": true,
+        "node_modules": true
+    }
+}

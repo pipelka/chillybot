@@ -1,0 +1,34 @@
+{
+    "system": {
+        "version":"0.0.9",
+        "timestamp":1537176811,
+        "heap":28792,
+        "chipid":"a2117",
+        "cpu":80,
+        "availsize":2605056,
+        "availspiffs":956561,
+        "spiffssize":957314,
+        "uptime":46127,
+        "ssid":"myhomewifi",
+        "dns":"192.168.1.1",
+        "mac":"84:F3:EB:0A:21:17",
+        "rssi":-74,
+        "bssid":"28:80:23:23:AF:30",
+        "ip":"192.168.1.100",
+        "gateway":"192.168.1.1",
+        "netmask":"255.255.255.0",    
+        "hostname":"chilly01"
+    },
+    "temp": {
+        "current": 21.5,
+        "target": 19
+    },
+    "override": {
+        "target": 20,
+        "enabled": false
+    },
+    "batch": {
+        "number": 44,
+        "name": "Samba Pale Ale"
+    }
+}
